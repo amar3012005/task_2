@@ -6,7 +6,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     return LaunchDescription([
-        # Declare the launch arguments
+        # dECLARING THE LAUNch Arguments
         DeclareLaunchArgument(
             'namespace', default_value='',
             description='Top-level namespace'),
@@ -15,10 +15,8 @@ def generate_launch_description():
             description='Use simulation (Gazebo) clock if true'),
         DeclareLaunchArgument(
             'params_file',
-            default_value='/home/justin/navigation2/nav2_bringup/params/nav2_params.yaml',
+            default_value='navigation2/nav2_bringup/params/nav2_params.yaml',
             description=''),
-
-        # Include the default nav2_bringup launch file
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
                 LaunchConfiguration('install_dir', default='/opt/ros/humble'),
@@ -30,8 +28,6 @@ def generate_launch_description():
                 'params_file': LaunchConfiguration('params_file')
             }.items()
         ),
-
-        # Launch the custom_planner node
         Node(
             package='custom_planner',
             executable='straight_line_planner',
