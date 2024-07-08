@@ -38,4 +38,4 @@ planner_server:
       plugin: "custom_planner::StraightLine"
       interpolation_resolution: 0.1
 
-### /Reference/Authoe: shivang_patel
+### /Reference/Author: shivang_patel
